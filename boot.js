@@ -12,31 +12,54 @@ const teamUsers = [
     {
         nome: "Waine Bernet",
         ruolo: "Founder e CEO",
-        foto: "wayne-barnett-founder-ceo.jpg"
+        foto: "img/wayne-barnett-founder-ceo.jpg"
     },
     {
         nome: "Angela caroll",
-        ruolo: "chief Editor",
+        ruolo: "Chief Editor",
         foto: "angela-caroll-chief-editor.jpg"
     },
     {
         nome: "Walter gordon",
         ruolo: "Office Manager",
-        foto: "walter-gordon-office-manager.jpg"
+        foto: ""
     },
     {
         nome: "Angela Lopez",
-        ruolo: "Social Meadia Menager",
-        foto: "angela-lopez-social-media-manager.jpg"
+        ruolo: "Social Media Manager",
+        foto: ""
     },
     {
         nome: "Scot Estrada",
         ruolo: "Developer",
-        foto: "scott-estrada-developer.jpg"
+        foto: ""
     },
     {
         nome: "Barbara Ramos",
-        ruolo: "Grafic Designer",
-        foto: "barbara-ramos-graphic-designer.jpg"
+        ruolo: "Graphic Designer",
+        foto: ""
     }
 ];
+
+// Stampare su console le informazioni di ogni membro del team
+teamUsers.forEach(member => {
+    console.log(`Nome: ${member.nome}, Ruolo: ${member.ruolo}, Foto: ${member.foto}`);
+});
+
+// Ottenere l'elemento della lista dal DOM
+const teamListElement = document.getElementById('team-list');
+
+// Stampare le stesse informazioni sul DOM sotto forma di stringhe
+teamUsers.forEach(member => {
+    // Creare una stringa con le informazioni del membro del team
+    const memberInfoString = `Nome: ${member.nome}, Ruolo: ${member.ruolo}, Foto: ${member.foto}`;
+    
+    // Creare un elemento list item (li) nel DOM
+    const memberListItem = document.createElement('li');
+    
+    // Impostare il contenuto del list item con la stringa delle informazioni del membro
+    memberListItem.textContent = memberInfoString;
+    
+    // Aggiungere il list item alla lista nel DOM
+    teamListElement.appendChild(memberListItem);
+});
